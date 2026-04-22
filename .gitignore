@@ -1,0 +1,6 @@
+node_modules/
+.agents/
+.claude/
+*.bak
+remove-bg.js
+skills-lock.json

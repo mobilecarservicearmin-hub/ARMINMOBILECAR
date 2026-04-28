@@ -1607,3 +1607,69 @@ html[lang="fa"] {
   --f-heading: 'Vazirmatn', sans-serif;
   --f-body: 'Vazirmatn', sans-serif;
 }
+
+/* ══════════════════════════════════════════════════
+   MOBILE NAV — hamburger & logo sizing fix
+══════════════════════════════════════════════════ */
+@media (max-width: 899px) {
+  .nav {
+    height: 72px;
+  }
+
+  .nav-logo-img {
+    height: 54px;
+    width: 54px;
+  }
+
+  .nav-logo-main {
+    font-size: 1.15rem;
+  }
+
+  .nav-logo-sub {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+  }
+
+  /* Make sure the toggle button is always visible */
+  .nav-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    padding: 10px 8px;
+    background: transparent;
+    border: 1.5px solid rgba(255,255,255,0.12);
+    border-radius: 8px;
+    cursor: pointer;
+    z-index: calc(var(--z-sticky) + 2);
+    flex-shrink: 0;
+  }
+
+  .nav-toggle .bar {
+    width: 22px;
+    height: 2px;
+    background: var(--c-text-1);
+    border-radius: 2px;
+    display: block;
+    transition: transform var(--t-base), opacity var(--t-base), width var(--t-base);
+    transform-origin: center;
+  }
+
+  .nav-toggle.is-open .bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-toggle.is-open .bar:nth-child(2) {
+    opacity: 0;
+    width: 0;
+  }
+  .nav-toggle.is-open .bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Hero padding adjustment for smaller nav */
+  .hero {
+    padding-top: 100px;
+  }
+}
+

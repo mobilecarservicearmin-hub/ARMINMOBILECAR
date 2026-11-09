@@ -1,10 +1,14 @@
 {
-  "version": 2,
-  "buildCommand": "",
-  "outputDirectory": ".",
-  "installCommand": "",
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
+  "buildCommand": "",
+  "installCommand": "",
+  "outputDirectory": ".",
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/nl.html", "destination": "/", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/$1" }
+    { "source": "/en/", "destination": "/en/index.html" }
   ]
 }

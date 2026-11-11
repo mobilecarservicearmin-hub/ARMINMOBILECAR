@@ -1,3 +1,12 @@
+// Resolve metadata against the current domain so it follows future domain changes.
+for (const link of document.querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]')) {
+  link.href = new URL(link.getAttribute('href'), window.location.origin).href;
+}
+const shareImage = document.querySelector('meta[property="og:image"]');
+if (shareImage) {
+  shareImage.content = new URL(shareImage.getAttribute('content'), window.location.origin).href;
+}
+
 const menu = document.querySelector('.menu-button');
 const nav = document.querySelector('#site-nav');
 
